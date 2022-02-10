@@ -5,7 +5,7 @@ const imageForPanel = [
     './Image/Neon.jpg',
     './Image/NiceLights.jpg',
     './Image/Person.jpg',
-    './Image/Stars.jpg'
+    './Image/Rider.jpg'
 ];
 
 for (let i = 0; i < panelSelectorForImage.length; i++) {

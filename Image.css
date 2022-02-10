@@ -17,7 +17,7 @@ body {
     width: 90vw;
 }
 
-.panel {
+.panel-container .panel {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body {
     margin: 10px;
 }
 
-.panel h3 {
+.panel-container .panel h3 {
     font-size: 40px;
     position: absolute;
     bottom: 20px;
@@ -39,11 +39,11 @@ body {
     opacity: 0;
 }
 
-.panel.active {
+.panel-container .panel.active {
     flex: 5;
 }
 
-.panel.active h3 {
+.panel-container .panel.active h3 {
     opacity: 1;
     transition: opacity 0.4s ease-in-out 0.4s;
 }

@@ -12,35 +12,22 @@ body {
     background-color: black;
 }
 
-/*Progress Bar*/
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*❤️❤️ Progess Bar Starts 💕💕*/
+
 #progress-bar {
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
-    height: 6px;
-    background: linear-gradient(to right, );
+    height: 4px;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
-/*Progress Bar Ends*/
-/*Background Wave Line*/
+/*❤️❤️ Progess Bar Ends 💕💕*/
 
-.wave-line {
-    width: 100%;
-    position: absolute;
-    top: 43%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
-.wave-line .line {
-    position: absolute;
-    width: 100%;
-    height: 130px;
-}
-
-/*Background Wave Line Ends*/
-
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 .blink-cursor {
     border-right: 4px solid white;
@@ -109,7 +96,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 20px;
+    margin: 10px;
 }
 
 .info-heading {
@@ -119,7 +106,7 @@ body {
 }
 
 .info-text {
-    width: 30vw;
+    width: 32vw;
     color: rgb(110, 110, 110);
     text-align: justify;
 }
@@ -135,10 +122,63 @@ body {
     height: 400px;
 }
 
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
-/*Images Page*/
+/*🔥🔥 Image Panel 1 Starts Here 🔥🔥*/
 
-.image-hover-page {
+.image-hover-page1 {
+    background: white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.panel-container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel-container .panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 30px;
+    flex: 0.5;
+    position: relative;
+    transition: flex 0.5s ease-in;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.panel-container .panel h3 {
+    font-size: 40px;
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    opacity: 0;
+}
+
+.panel-container .panel.active {
+    flex: 5;
+}
+
+.panel-container .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out 0.4s;
+}
+
+/*🔥🔥 Image Panel 1 Ends Here 🔥🔥*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*😎😎 Image Panel 2 Starts Here 😎😎*/
+
+.image-hover-page2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,3 +242,124 @@ body {
     max-width: 100%;
     height: 100%;
 }
+
+/*😎😎 Image Panel 2 Ends Here 😎😎*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*🥰🥰🥰🥰 Here Comes Footer 😘😘😘😘*/
+
+footer {
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    color: rgb(255, 255, 255);
+    padding: 30px 0;
+    line-height: 20px;
+}
+
+footer .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+footer .col {
+    flex-basis: 25%;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+footer .col p {
+    text-align: justify;
+}
+
+footer .col h3 {
+    font-size: 22px;
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+footer .logo {
+    filter: brightness(0) invert(1);
+    width: 160px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+footer .email-id {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+footer .links {
+    font-size: 18px;
+}
+
+footer .links li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer .links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+footer form .far {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+footer form input {
+    width: 100%;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    border: 0;
+    outline: none;
+}
+
+footer ::-webkit-input-placeholder {
+    color: rgb(255, 255, 255);
+}
+
+footer form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fas {
+    font-size: 16px;
+    color: #ccc;
+}
+
+footer .social-icons .fab {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+
+/*👟👟👟👟 Footer Ends 🩴🩴🩴🩴*/
