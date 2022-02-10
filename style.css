@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+/*Progress Bar*/
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: linear-gradient(to right, );
+}
+
+/*Progress Bar Ends*/
+/*Background Wave Line*/
+
+.wave-line {
+    width: 100%;
+    position: absolute;
+    top: 43%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.wave-line .line {
+    position: absolute;
+    width: 100%;
+    height: 130px;
+}
+
+/*Background Wave Line Ends*/
+
+
+.blink-cursor {
+    border-right: 4px solid white;
+    padding-right: 4px;
+}
+
+.blue-color {
+    font-size: 50px;
+    color: blue;
+}
+
+.landing-page {
+    /* background-image: url('./Image/gradient-sanguine.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    height: 100vh;
+}
+
+.navigation-bar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 120px;
+    align-items: center;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.signature {
+    filter: brightness(0) invert(1);
+    height: 100px;
+    padding: 20px 0 0 100px;
+}
+
+.nav-list {
+    padding: 0 100px;
+    display: flex;
+    justify-content: end;
+}
+
+.navigation-items {
+    display: flex;
+    color: white;
+    list-style: none;
+}
+
+.each-navigation-item {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.landing-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+.info-heading {
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.info-text {
+    width: 30vw;
+    color: rgb(110, 110, 110);
+    text-align: justify;
+}
+
+.info-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.ronaldo-image {
+    height: 400px;
+}
+
+
+/*Images Page*/
+
+.image-hover-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    height: 80vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.hover-image-container {
+    clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.hover-image-container:hover {
+    transform: scale(1.15);
+    z-index: 1;
+}
+
+.hover-image-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, #f00, #000);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    /*Animation should be removed*/
+    animation-name: demo-animation;
+    animation-duration: 0.5s;
+}
+
+@keyframes demo-animation {
+    25% {
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    75% {
+        opacity: .75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hover-image {
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    height: 100%;
+}
