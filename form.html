@@ -1,163 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            /* background: radial-gradient(darkblue 10%, rgb(74, 139, 224), white); */
-            background: linear-gradient(to left, #9cecfb, #65c7f7, #0052d4);
-
-        }
-
-        div {
-            border: 2px solid black;
-        }
-
-        table {
-            width: 35%;
-            margin: 3rem auto;
-            color: white;
-            font-size: 18px;
-        }
-
-        input {
-            font-size: 18x;
-            outline: none;
-            border: 3px solid darkblue;
-            border-radius: 6px;
-            padding-left: 2px;
-        }
-
-        caption {
-            text-decoration: underline;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 25px;
-            color: darkblue;
-        }
-
-        button {
-            width: 100px;
-            color: darkblue;
-            padding: 0.5rem 0.5rem;
-            font-weight: bolder;
-            border: 3px solid darkblue;
-            border-radius: 10px;
-        }
-
-        button:hover {
-            background-color: darkblue;
-            color: white;
-            border: 3px solid white;
-        }
-
-        footer {
-            background: darkblue;
-            color: white;
-            margin-top: 3rem;
-        }
-
-        .center {
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-
-        .maybe-error {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .form-error {
-            width: 300px;
-            position: absolute;
-            left: 180px;
-            color: darkblue;
-            /* background-color: aliceblue; */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./form.css">
 </head>
 
 <body>
-    <form name="registration-form" onsubmit="return validateForm()" method="post">
-        <table cellspacing="17" cellpadding="9">
-            <caption>USER REGISTRATION FORM</caption>
-            <tr>
-                <th>Full Name :</th>
-                <td><input type="text" placeholder="Enter your Full Name"></td>
-            </tr>
-            <tr>
-                <th>Email :</th>
-                <td><input type="email" name="email" placeholder="Enter your Email ID"></td>
-            </tr>
-            <tr>
-                <th>Gender :</th>
-                <td>
-                    <input type="radio" name="gen" checked>Male&nbsp;
-                    <input type="radio" name="gen">Female
-                </td>
-            </tr>
-            <tr>
-                <th>Phone :</th>
-                <td class="maybe-error">
-                    <input type="tel" placeholder="Enter 10 digit Phone Number" name="phoneNumber">
-                    <span class="form-error"></span>
-                </td>
-
-            </tr>
-            <tr>
-                <th>Address :</th>
-                <td><textarea placeholder="Enter your text here" rows="3" cols="20"></textarea></td>
-
-            </tr>
-            <tr>
-                <th>Favourite Destination(s):</th>
-                <td>
-                    <input type="checkbox" name="gen" checked>Kolkata&nbsp;
-                    <input type="checkbox" name="gen">Agra<br /><br />
-                    <input type="checkbox" name="gen">Varansi&nbsp;
-                    <input type="checkbox" name="gen">Goa
-                </td>
-            </tr>
-            <tr>
-                <th>No. of persons :</th>
-                <td><input type="number" name="persons" placeholder="Enter No. of Persons">
-                </td>
-            </tr>
-            <tr>
-                <th>Travel Package (in Days) :</th>
-                <td><input type="number" name="days" placeholder="Enter No. of Days"></td>
-            </tr>
-            <tr>
-                <th>Password :</th>
-                <td class="maybe-error">
-                    <input type="password" name="password" placeholder="6-8 Characters">
-                    <span class="form-error">*Password Should Be 6 to 8 Characters</span>
-                </td>
-
-            </tr>
-            <tr>
-                <th>Confirm password :</th>
-                <td><input type="password" name="password" placeholder="Type your password again"></td>
-            </tr>
-            <tr>
-                <th colspan="2">
-                    <pre
-                        style="margin-top:3rem;"><button type="submit" value="Send"> SUBMIT</button>    <button type="reset" value="Clear">RESET</button></pre>
-                </th>
-            </tr>
-
-        </table>
-    </form>
-
-
-    <script src="formValidate.js"></script>
+    <div class="form-container">
+        <form id="registration-form" name="registration-form">
+            <h2 class="comments-title" id="comments">
+                <span>
+                    USER REGISTRATION
+                </span>
+            </h2>
+            Full Name :
+            <input type="text" placeholder="Enter your Full Name">
+            Email :
+            <input type="email" name="email" placeholder="Enter your Email ID">
+            Gender :
+            <div class="gender-input">
+                <input type="radio" name="gen" checked>Male&nbsp;
+                <input type="radio" name="gen">Female
+            </div>
+            Phone :
+            <div class="maybe-error">
+                <input type="tel" placeholder="Enter 10 digit Phone Number" name="phoneNumber">
+                <span class="form-error inactive">*Phone Number Should Be Of 10 Digits</span>
+            </div>
+            <label for=""></label> Address:
+            <textarea placeholder="Enter your text here" rows="3" cols="20"></textarea>
+            No. of persons :
+            <input type="number" name="persons" placeholder="Enter No. of Persons">
+            Travel Package (in Days) :
+            <input type="number" name="days" placeholder="Enter No. of Days">
+            Password :
+            <div class="maybe-error">
+                <input type="password" name="password" placeholder="6-8 Characters">
+                <span class="form-error inactive">*Password Should Be 6 to 8 Characters</span>
+            </div>
+            Confirm password :
+            <input type="password" name="password" placeholder="Type your password again">
+            <div class="button-container">
+                <button type="submit" value="Send"> SUBMIT</button>
+                <button type="reset" value="Clear">RESET</button>
+            </div>
+        </form>
+    </div>
+    <script src="form.js"></script>
 </body>
 
 </html>

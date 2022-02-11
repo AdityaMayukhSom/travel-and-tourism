@@ -52,8 +52,6 @@ for (let i = 0; i < alternativeContainerRow.length; i++) {
         alternativeContainerRow[i].children[1].append((stringToHTML(sectionText)));
         alternativeContainerRow[i].children[1].classList.add('text-color-white');
 
-
-
         clickButton = alternativeContainerRow[i].children[1].querySelector('btn');
         clickButton.classList.remove("btn-color-black");
         clickButton.classList.add("btn-color-white");

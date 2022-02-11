@@ -176,6 +176,95 @@ body {
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
+/*😎😎 Alternative Container Starts Here 😎😎*/
+.alternative-container .background-image-fitting {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.alternative-container .alternative-container-row {
+    background-color: white;
+    width: 100%;
+    min-height: 400px;
+    height: 65vh;
+    display: grid;
+}
+
+.alternative-container .alternative-container-text {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.alternative-container .text-color-white {
+    color: white;
+}
+
+.alternative-container .alternative-container-text .title {
+    font-family: monospace;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.alternative-container .alternative-container-text .text {
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+.odd {
+    grid-template-columns: 1fr 1fr;
+}
+
+.even {
+    grid-template-columns: 1fr 1fr;
+}
+
+.alternative-container .buttons {
+    margin: 30px 0 0 0;
+    display: flex;
+    font-family: monospace;
+}
+
+.alternative-container .btn {
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 50px;
+    position: relative;
+    font-size: 1.25rem;
+}
+
+.alternative-container .btn-color-black {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+.alternative-container .btn-color-white {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.alternative-container .btn::after,
+.alternative-container .btn::before {
+    border: 3px solid #000;
+    content: "";
+    position: absolute;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+.alternative-container .btn:hover::after {
+    transform: translate(5px, 5px);
+}
+
+/*😎😎 Alternative Container Ends Here 😎😎*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
 /*😎😎 Image Panel 2 Starts Here 😎😎*/
 
 .image-hover-page2 {
