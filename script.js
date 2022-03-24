@@ -111,21 +111,6 @@ function removeActiveClasses() {
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
 
-/*🔥🔥 Cursor Blink Functionality Starts Here🔥🔥*/
-
-/*
-function cursorBlink() {
-    const txtElement = document.querySelector('.txt-type');
-    setInterval(() => {
-        txtElement.classList.toggle('blink-cursor');
-    }, 500);
-}
-*/
-
-/*🔥🔥 Cursor Blink Functionality Ends Here🔥🔥*/
-
-/* ------------------------------------------------------------------------------------------------------------------------ */
-
 /*🔥🔥 Alternative Panel Starts Here🔥🔥*/
 
 const alternativeContainerRow = document.getElementsByClassName("alternative-container-row");
@@ -193,3 +178,47 @@ for (let i = 0; i < alternativeContainerRow.length; i++) {
 }
 
 /*🔥🔥 Alternative Panel Ends Here🔥🔥*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*😋😋 Carousel Starts Here 🥲🥲*/
+
+// const carouselContainerButton = document.querySelector('.carousel-container-btn');
+const firstCarouselItem = document.querySelector('.first-carousel-item');
+const carouselItems = document.getElementsByClassName('carousel-item');
+const carouselControlButton = document.getElementsByClassName('carousel-control-button');
+let clickCount = 1;
+
+/* If One Day We Enable The Button In HTML Then This Code Will Be Useful */
+// carouselContainerButton.addEventListener('click', changeImage);
+setInterval(changeImage, 5000);
+
+function changeImage() {
+    firstCarouselItem.style.marginLeft = `-${clickCount * 100}%`;
+    for (let i = 0; i < carouselControlButton.length; i++) {
+        carouselControlButton[i].classList.remove('outline');
+    }
+    carouselControlButton[clickCount].classList.add('outline');
+
+    clickCount++;
+    if (clickCount === carouselItems.length) {
+        clickCount = 0;
+    }
+};
+
+/*😋😋 Carousel Ends Here 🥲🥲*/
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+/*🔥🔥 Cursor Blink Functionality Starts Here🔥🔥*/
+
+/*
+function cursorBlink() {
+    const txtElement = document.querySelector('.txt-type');
+    setInterval(() => {
+        txtElement.classList.toggle('blink-cursor');
+    }, 500);
+}
+*/
+
+/*🔥🔥 Cursor Blink Functionality Ends Here🔥🔥*/
