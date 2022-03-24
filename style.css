@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,9 @@ body {
     background-color: black;
 }
 
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /*❤️❤️ Progess Bar Starts 💕💕*/
 
@@ -26,7 +27,9 @@ body {
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
+
 /*❤️❤️ Progess Bar Ends 💕💕*/
+
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -114,7 +117,9 @@ body {
     text-align: justify;
 }
 
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /*😋😋 Carousel Starts Here 🥲🥲*/
 
@@ -189,9 +194,12 @@ body {
     cursor: pointer;
 }
 
+
 /*🔥🔥 Carousel Ends Here 🔥🔥*/
 
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /*🔥🔥 Image Panel 1 Starts Here 🔥🔥*/
 
@@ -241,17 +249,20 @@ body {
     transition: opacity 0.4s ease-in-out 0.4s;
 }
 
+
 /*🔥🔥 Image Panel 1 Ends Here 🔥🔥*/
+
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
+
 /*😎😎 Alternative Container Starts Here 😎😎*/
+
 .alternative-container .background-image-fitting {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 .alternative-container .alternative-container-row {
     background-color: white;
@@ -330,80 +341,12 @@ body {
     transform: translate(5px, 5px);
 }
 
+
 /*😎😎 Alternative Container Ends Here 😎😎*/
 
-/* --------------------------------------------------------------------------------------------------------------------------------- */
-
-/*😎😎 Image Panel 2 Starts Here 😎😎*/
-
-.image-hover-page2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    height: 80vh;
-    width: 80vw;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.hover-image-container {
-    clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
-    transition: transform 0.5s ease-in-out;
-}
-
-.hover-image-container:hover {
-    transform: scale(1.15);
-    z-index: 1;
-}
-
-.hover-image-container:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: linear-gradient(180deg, #f00, #000);
-    mix-blend-mode: multiply;
-    opacity: 0;
-    /*Animation should be removed*/
-    animation-name: demo-animation;
-    animation-duration: 0.5s;
-}
-
-@keyframes demo-animation {
-    25% {
-        opacity: .25;
-    }
-
-    50% {
-        opacity: .5;
-    }
-
-    75% {
-        opacity: .75;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.hover-image {
-    object-fit: cover;
-    object-position: center;
-    max-width: 100%;
-    height: 100%;
-}
-
-/*😎😎 Image Panel 2 Ends Here 😎😎*/
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
 
 /*🥰🥰🥰🥰 Here Comes Footer 😘😘😘😘*/
 
