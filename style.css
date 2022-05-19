@@ -1,35 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 body {
     background-color: black;
 }
 
-
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
 
 /*❤️❤️ Progess Bar Starts 💕💕*/
 
 #progress-bar {
-    z-index: 100;
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
     height: 4px;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
 }
 
-
 /*❤️❤️ Progess Bar Ends 💕💕*/
-
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -43,127 +42,27 @@ body {
     color: blue;
 }
 
-.landing-page {
-    /* background-image: url('./Image/gradient-sanguine.jpg'); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    height: 100vh;
-}
-
-.navigation-bar {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    min-height: 120px;
-    align-items: center;
-}
-
-.nav-icon {
-    display: flex;
-    align-items: center;
-}
-
-.signature {
-    filter: brightness(0) invert(1);
-    height: 100px;
-    padding: 20px 0 0 100px;
-}
-
-.nav-list {
-    padding: 0 100px;
-    display: flex;
-    justify-content: end;
-}
-
-.navigation-items {
-    display: flex;
-    color: white;
-    list-style: none;
-}
-
 .each-navigation-item {
     margin: 0 10px;
     cursor: pointer;
 }
 
-.landing-box {
-    position: absolute;
-    width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-}
-
-.info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px;
-}
-
-.info-heading {
-    color: white;
-    font-size: 50px;
-    font-weight: 500;
-}
-
 .info-text {
-    width: 32vw;
     color: rgb(110, 110, 110);
     text-align: justify;
 }
 
-
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
 
 /*😋😋 Carousel Starts Here 🥲🥲*/
 
-.carousel-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.carousel-container .carousel-view-port {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    height: 360px;
-    width: 640px;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.carousel-container .carousel-item {
-    height: 360px;
-    min-width: 640px;
-}
-
-.carousel-container .carousel-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-container .first-carousel-item {
-    transition: 2s;
-    margin-left: 0%;
-}
-
-.carousel-container .carousel-control-panel {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.carousel-container .carousel-control-button {
+.carousel-control-button {
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
     border-radius: 50%;
     display: inline-block;
@@ -174,37 +73,18 @@ body {
     backdrop-filter: blur(20px);
 }
 
-.carousel-container .carousel-control-button.outline {
+.carousel-control-button.outline {
     outline: 3px solid rgba(255, 255, 255, 0.8);
     outline-offset: 3px;
 }
 
-.carousel-container-btn {
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 20px auto;
-    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
-    width: 300px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    cursor: pointer;
-}
-
-
 /*🔥🔥 Carousel Ends Here 🔥🔥*/
-
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
-
 /*🔥🔥 Image Panel 1 Starts Here 🔥🔥*/
 
-.image-hover-page1 {
-    background: white;
+#image-hover-page1 {
     margin: 0;
     display: flex;
     align-items: center;
@@ -213,50 +93,66 @@ body {
     overflow: hidden;
 }
 
-.panel-container {
+#panel-container {
     display: flex;
     width: 90vw;
 }
 
-.panel-container .panel {
-    background-size: cover;
+#panel-container .panel {
     background-position: center;
     background-repeat: no-repeat;
     height: 80vh;
-    border-radius: 30px;
-    flex: 0.5;
+    border-radius: 6px;
     position: relative;
     transition: flex 0.5s ease-in;
+    flex: 0.5;
     color: #fff;
     cursor: pointer;
     margin: 10px;
 }
 
-.panel-container .panel h3 {
-    font-size: 40px;
+#panel-container .panel .panel-title {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    font-size: 60px;
+    bottom: 0;
     position: absolute;
-    bottom: 20px;
-    left: 30px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.panel-container .panel.active {
+#panel-container .panel.active {
     flex: 5;
 }
 
-.panel-container .panel.active h3 {
+#panel-container .panel.active h3 {
     opacity: 1;
-    transition: opacity 0.4s ease-in-out 0.4s;
+    transition: opacity 0.5s ease-in-out;
 }
-
 
 /*🔥🔥 Image Panel 1 Ends Here 🔥🔥*/
 
-
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
-
 /*😎😎 Alternative Container Starts Here 😎😎*/
+.greenBackground {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1542351366-d8d0560af4d1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1329");
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.4), 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.alternative-container-row {
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
 
 .alternative-container .background-image-fitting {
     background-size: cover;
@@ -268,7 +164,7 @@ body {
     background-color: white;
     width: 100%;
     min-height: 400px;
-    height: 65vh;
+    /* height: 65vh; */
     display: grid;
 }
 
@@ -282,23 +178,9 @@ body {
     color: white;
 }
 
-.alternative-container .alternative-container-text .title {
-    font-family: monospace;
-    font-size: 40px;
-    margin: 10px 0;
-}
-
 .alternative-container .alternative-container-text .text {
     font-family: sans-serif;
     text-align: justify;
-}
-
-.odd {
-    grid-template-columns: 1fr 1fr;
-}
-
-.even {
-    grid-template-columns: 1fr 1fr;
 }
 
 .alternative-container .buttons {
@@ -309,6 +191,7 @@ body {
 
 .alternative-container .btn {
     text-decoration: none;
+    border-radius: 3px;
     text-align: center;
     padding: 20px 50px;
     position: relative;
@@ -320,51 +203,17 @@ body {
     color: rgb(255, 255, 255);
 }
 
-.alternative-container .btn-color-white {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-
-.alternative-container .btn::after,
-.alternative-container .btn::before {
-    border: 3px solid #000;
-    content: "";
-    position: absolute;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    left: 0;
-    bottom: 0;
-    transition: transform 0.3s ease;
-}
-
-.alternative-container .btn:hover::after {
-    transform: translate(5px, 5px);
-}
-
-
 /*😎😎 Alternative Container Ends Here 😎😎*/
 
-
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
 
 /*🥰🥰🥰🥰 Here Comes Footer 😘😘😘😘*/
 
 footer {
     width: 100%;
-    bottom: 0;
-    background: linear-gradient(to right, #56ccf2, #2f80ed);
     color: rgb(255, 255, 255);
-    padding: 30px 0;
+    padding-top: 30px;
     line-height: 20px;
-}
-
-footer .row {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
 }
 
 footer .col {
@@ -444,11 +293,6 @@ footer form button {
     cursor: pointer;
 }
 
-form button .fas {
-    font-size: 16px;
-    color: #ccc;
-}
-
 footer .social-icons .fab {
     width: 40px;
     height: 40px;
@@ -462,5 +306,13 @@ footer .social-icons .fab {
     cursor: pointer;
 }
 
+footer .copyright {
+    border-top: 1px solid rgba(172, 172, 172, 0.664);
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 /*👟👟👟👟 Footer Ends 🩴🩴🩴🩴*/

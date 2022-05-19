@@ -2,15 +2,15 @@
 
 /*❤️❤️ Progess Bar Starts 💕💕*/
 
-const progressBar = document.getElementById('progress-bar');
-const body = document.querySelector('body');
+const progressBar = document.getElementById("progress-bar");
+const body = document.querySelector("body");
 
 const animateProgressBar = () => {
     let scrollDistance = -body.getBoundingClientRect().top;
     let progressWidth = (scrollDistance / (body.getBoundingClientRect().height - document.documentElement.clientHeight)) * 100;
     let value = Math.floor(progressWidth);
     progressBar.style.width = value + "%";
-}
+};
 
 window.addEventListener("scroll", animateProgressBar);
 
@@ -20,17 +20,20 @@ window.addEventListener("scroll", animateProgressBar);
 
 /*🔥🔥 TypeWriter Effect Starts Here 🔥🔥*/
 
-const myArr = ['Mysore', 'Kashmir', 'Ladakh', 'Delhi', 'Sikkim', 'Meghalaya', 'Kerala', 'Andaman', 'Goa', 'Agra', 'Varanasi', 'Jaisalmer', 'Rann Of Kutch', 'Aurangabad', 'Sunderbans', 'Hampi', 'Kaziranga', 'Rishikesh', 'Jaipur', 'Amritsar', 'Shimla'];
+const myArr = ["Mysore", "Kashmir", "Ladakh", "Delhi", "Sikkim", "Meghalaya", "Kerala", "Andaman", "Goa", "Jaisalmer", "Sunderbans", "Hampi", "Kaziranga", "Rishikesh", "Jaipur", "Amritsar", "Shimla"];
 
 // Initialize On DOM Load
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded", init);
+
+let viewPortWidth;
 
 function init() {
     // cursorBlink();
-    const txtElement = document.querySelector('.txt-type');
+    viewPortWidth = document.getElementById("carousel-viewport").clientWidth;
+    const txtElement = document.querySelector(".txt-type");
     const words = myArr;
-    const wait = txtElement.getAttribute('data-wait');
+    const wait = txtElement.getAttribute("data-wait");
     new TypeWriter(txtElement, words, wait); //Initialize the TypeWriter
 }
 
@@ -39,12 +42,12 @@ function init() {
 const TypeWriter = function (txtElement, words, wait = 3000) {
     this.txtElement = txtElement;
     this.words = words;
-    this.txt = '';
+    this.txt = "";
     this.wordIndex = 0;
     this.wait = parseInt(wait);
     this.type();
     this.isDeleting = false;
-}
+};
 
 TypeWriter.prototype.type = function () {
     const current = this.wordIndex % this.words.length; //Current Index Of Words
@@ -64,15 +67,14 @@ TypeWriter.prototype.type = function () {
     if (!this.isDeleting && this.txt === fullTxt) {
         typeSpeed = this.wait;
         this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
+    } else if (this.isDeleting && this.txt === "") {
         this.isDeleting = false;
         this.wordIndex++;
         typeSpeed = 500;
     }
 
-    setTimeout(() => this.type(), typeSpeed)
-}
-
+    setTimeout(() => this.type(), typeSpeed);
+};
 
 /*🔥🔥 TypeWriter Effect Ends Here 🔥🔥*/
 
@@ -80,145 +82,77 @@ TypeWriter.prototype.type = function () {
 
 /*😶‍🌫️😶‍🌫️ Panel Functionality Starts Here 😶‍🌫️😶‍🌫️*/
 
-const panels = document.querySelectorAll('.panel');
-const panelSelectorForImage = document.getElementsByClassName('panel');
+const panels = document.querySelectorAll(".panel");
+const panelSelectorForImage = document.getElementsByClassName("panel");
+const imageHoverPage1 = document.getElementById("image-hover-page1");
+const panelContainer = document.getElementById("panel-container");
+
 const imageForPanel = [
-    './Image/LightBeam.jpg',
-    './Image/Neon.jpg',
-    './Image/NiceLights.jpg',
-    './Image/Person.jpg',
-    './Image/Rider.jpg'
+    "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1120",
+    "https://images.unsplash.com/photo-1486299267070-83823f5448dd?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171",
+    "https://images.unsplash.com/photo-1587162146766-e06b1189b907?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256",
+    "https://images.unsplash.com/photo-1528072164453-f4e8ef0d475a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171",
+    "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172",
 ];
 
 for (let i = 0; i < panelSelectorForImage.length; i++) {
     panelSelectorForImage[i].style.backgroundImage = `url(${imageForPanel[i]})`;
 }
 
-panels.forEach(panel => {
-    panel.addEventListener('click', () => {
+panels.forEach((panel) => {
+    panel.addEventListener("mouseover", () => {
         removeActiveClasses();
-        panel.classList.add('active');
-    })
-})
+        panel.classList.add("active");
+    });
+});
 
 function removeActiveClasses() {
-    panels.forEach(panel => {
-        panel.classList.remove('active');
-    })
+    panels.forEach((panel) => {
+        panel.classList.remove("active");
+    });
 }
+
+panelContainer.addEventListener("mouseleave", removeActiveClasses);
 
 /*😶‍🌫️😶‍🌫️ Panel Functionality Ends Here 😶‍🌫️😶‍🌫️*/
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
 
-/*🔥🔥 Alternative Panel Starts Here🔥🔥*/
-
-const alternativeContainerRow = document.getElementsByClassName("alternative-container-row");
-const imageList = [
-    './Image/Delhi.jpg',
-    './Image/Agra.jpg',
-    './Image/Manali.jpg',
-    './Image/Kerala.jpg',
-    './Image/Kolkata.jpg',
-    './Image/Maldives.jpg'
-];
-
-const sectionText = `<section class="alternative-container-text">
-<h2 class="title">SECTION TITLE</h2>
-<div class="text">
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id accusamus tempore odio vel
-        quas debitis minus ipsum? A quasi quo voluptatibus quod aut cum quidem, architecto neque
-        beatae rem?
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nam doloremque velit dolorem
-        ut, laudantium iusto, dicta placeat optio dolores ratione recusandae voluptatibus odio.
-        Nostrum cupiditate velit voluptatibus voluptatem reprehenderit?
-    </p>
-</div>
-<div class="buttons">
-    <a href="#" class="btn btn-color-black">Click Me</a>
-</div>
-</section>`;
-
-var stringToHTML = function (str) {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(str, 'text/html');
-    console.log(doc.body);
-    return doc.body;
-};
-
-
-for (let i = 0; i < alternativeContainerRow.length; i++) {
-    if (i % 2 === 1) {
-        alternativeContainerRow[i].classList.add("odd");
-    } else {
-        alternativeContainerRow[i].classList.add("even");
-    }
-}
-
-
-for (let i = 0; i < alternativeContainerRow.length; i++) {
-    if (alternativeContainerRow[i].classList.contains("even")) {
-        alternativeContainerRow[i].style.backgroundColor = 'black';
-        alternativeContainerRow[i].children[0].classList.add('background-image-fitting');
-        alternativeContainerRow[i].children[0].style.backgroundImage = `url(${imageList[i]})`;
-        alternativeContainerRow[i].children[1].innerHTML = sectionText;
-        alternativeContainerRow[i].children[1].classList.add('text-color-white');
-
-        // clickButton = alternativeContainerRow[i].children[1].querySelector('btn');
-        // clickButton.classList.remove("btn-color-black");
-        // clickButton.classList.add("btn-color-white");
-    } else {
-        alternativeContainerRow[i].children[1].classList.add('background-image-fitting');
-        alternativeContainerRow[i].children[1].style.backgroundImage = `url(${imageList[i]})`
-        alternativeContainerRow[i].children[0].innerHTML = sectionText;
-    }
-}
-
-/*🔥🔥 Alternative Panel Ends Here🔥🔥*/
-
-/* --------------------------------------------------------------------------------------------------------------------------------- */
-
 /*😋😋 Carousel Starts Here 🥲🥲*/
 
-// const carouselContainerButton = document.querySelector('.carousel-container-btn');
-const firstCarouselItem = document.querySelector('.first-carousel-item');
-const carouselItems = document.getElementsByClassName('carousel-item');
-const carouselControlButton = document.getElementsByClassName('carousel-control-button');
-let clickCount = 1;
-
-/* If One Day We Enable The Button In HTML Then This Code Will Be Useful */
-// carouselContainerButton.addEventListener('click', changeImage);
-setInterval(changeImage, 5000);
-
-function changeImage() {
-    firstCarouselItem.style.marginLeft = `-${clickCount * 100}%`;
-    for (let i = 0; i < carouselControlButton.length; i++) {
-        carouselControlButton[i].classList.remove('outline');
-    }
-    carouselControlButton[clickCount].classList.add('outline');
-
-    clickCount++;
-    if (clickCount === carouselItems.length) {
-        clickCount = 0;
-    }
+window.onresize = () => {
+    viewPortWidth = document.getElementById("carousel-viewport").clientWidth;
 };
 
-/*😋😋 Carousel Ends Here 🥲🥲*/
+let imageNumber = 1;
+const carouselRibbon = document.getElementById("carousel-ribbon");
+const carousalControlPanel = document.getElementById("carousal-control-panel");
+const carouselControlButton = document.getElementsByClassName("carousel-control-button");
+let carouselInterval = setInterval(changeImage, 4000);
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
+let oldCarouselPointer = 0;
+let newCarouselPointer = 0;
 
-/*🔥🔥 Cursor Blink Functionality Starts Here🔥🔥*/
-
-/*
-function cursorBlink() {
-    const txtElement = document.querySelector('.txt-type');
-    setInterval(() => {
-        txtElement.classList.toggle('blink-cursor');
-    }, 500);
+carousalControlPanel.onclick = (e) => {
+    if (e.target === e.currentTarget) {
+        null;
+    } else {
+        clearInterval(carouselInterval);
+        imageNumber = e.target.dataset.imagecode;
+        changeImage();
+        carouselInterval = setInterval(changeImage, 4000);
+    }
+};
+function changeImage() {
+    if (imageNumber > 5) {
+        imageNumber = 0;
+    }
+    oldCarouselPointer = newCarouselPointer;
+    newCarouselPointer = imageNumber;
+    carouselRibbon.style.marginLeft = `-${viewPortWidth * imageNumber}px`;
+    carouselControlButton[newCarouselPointer].classList.add("outline");
+    carouselControlButton[oldCarouselPointer].classList.remove("outline");
+    imageNumber += 1;
 }
-*/
 
-/*🔥🔥 Cursor Blink Functionality Ends Here🔥🔥*/
+/*😋😋 Carousel Ends Here 🥲🥲*/
