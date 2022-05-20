@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*❤️❤️ Progess Bar Starts 💕💕*/
+
+#progress-bar {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+}
+
+/*❤️❤️ Progess Bar Ends 💕💕*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+.blink-cursor {
+    border-right: 4px solid white;
+    padding-right: 4px;
+}
+
+.blue-color {
+    font-size: 50px;
+    color: blue;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*😋😋 Carousel Starts Here 🥲🥲*/
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-control-button {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+}
+
+.carousel-control-button.outline {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 3px;
+}
+
+/*🔥🔥 Carousel Ends Here 🔥🔥*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*🔥🔥 Image Panel 1 Starts Here 🔥🔥*/
+
+#image-hover-page1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#panel-container .panel {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 6px;
+    position: relative;
+    transition: flex 0.5s ease-in;
+    flex: 0.5;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#panel-container .panel .panel-title {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    font-size: 60px;
+    bottom: 0;
+    position: absolute;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#panel-container .panel.active {
+    flex: 5;
+}
+
+#panel-container .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/*🔥🔥 Image Panel 1 Ends Here 🔥🔥*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*😎😎 Alternative Container Starts Here 😎😎*/
+
+.textBackground {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 0 6px 10px rgba(0, 0, 0, 0.4), 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.alternative-container-row {
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.alternative-container .background-image-fitting {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.alternative-container .alternative-container-row {
+    background-color: white;
+    width: 100%;
+    min-height: 400px;
+    /* height: 65vh; */
+    display: grid;
+}
+
+.alternative-container .alternative-container-text {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+}
+
+.alternative-container .text-color-white {
+    color: white;
+}
+
+.alternative-container .alternative-container-text .text {
+    font-family: sans-serif;
+    text-align: justify;
+}
+
+.alternative-container .buttons {
+    margin: 30px 0 0 0;
+    display: flex;
+    font-family: monospace;
+}
+
+.alternative-container .btn {
+    text-decoration: none;
+    border-radius: 3px;
+    text-align: center;
+    padding: 20px 50px;
+    position: relative;
+    font-size: 1.25rem;
+}
+
+.alternative-container .btn-color-black {
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+/*😎😎 Alternative Container Ends Here 😎😎*/
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/*🥰🥰🥰🥰 Here Comes Footer 😘😘😘😘*/
+
+footer {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    line-height: 20px;
+}
+
+footer .logo {
+    filter: brightness(0) invert(1);
+    width: 160px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+footer .links {
+    font-size: 18px;
+}
+
+footer .links li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+footer .links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .copyright {
+    border-top: 1px solid rgba(172, 172, 172, 0.664);
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*👟👟👟👟 Footer Ends 🩴🩴🩴🩴*/
