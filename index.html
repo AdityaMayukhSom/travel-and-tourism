@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
         <!-- <link rel="stylesheet" href="./style.css" /> -->
-        <link rel="stylesheet" href="./output.css" />
+        <link rel="stylesheet" href="./css/output.css" />
         <!-- 😶‍🌫️😶‍🌫️ Need To Delete This Before Final Submission 😶‍🌫️😶‍🌫️ -->
 
         <title>Travel And Tourism</title>
@@ -24,12 +24,22 @@
 
         <div class="landing-page min-h-screen">
             <nav class="flex justify-between items-center px-6 py-4">
-                <img class="invert h-[70px] pl-4" src="./Signature.png" alt="" />
-                <ul class="text-white hidden sm:flex flex-row">
-                    <li class="each-navigation-item">HOME</li>
-                    <li class="each-navigation-item">ABOUT</li>
-                    <li class="each-navigation-item">SERVICES</li>
-                    <li class="each-navigation-item">CONTACT</li>
+                <a href="#">
+                    <img class="invert h-[70px] pl-4" src="./images/Signature.png" alt="" />
+                </a>
+                <ul class="text-white hidden sm:flex flex-row items-center">
+                    <li class="m-2 cursor-pointer border-l-4 pl-3 border-red-600">HOME</li>
+                    <li class="m-2 cursor-pointer">ABOUT</li>
+                    <li class="m-2 cursor-pointer">SERVICES</li>
+                    <li class="m-2 cursor-pointer">
+                        <a
+                            href="./html/contact.html"
+                            type="button"
+                            class="inline-block px-6 py-2.5 bg-gray-200 text-gray-700 leading-tight uppercase rounded-sm shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out font-semibold text-sm"
+                        >
+                            CONTACT
+                        </a>
+                    </li>
                 </ul>
                 <div class="flex sm:hidden">
                     <svg class="h-7 w-7" viewBox="0 0 24 24">
@@ -38,15 +48,20 @@
                 </div>
             </nav>
 
-            <div class="landing-box flex flex-col lg:flex-row lg:items-center px-8 lg:py-16">
+            <div class="landing-box flex flex-col lg:flex-row lg:items-center px-8 lg:py-10">
                 <div class="info w-full lg:w-1/2 pt-10 lg:pt-0">
-                    <div class="text-4xl font-semibold text-white px-6 pb-4">
-                        <div class="inline lg:block">Let's Travel,</div>
-                        <span>To&nbsp;</span>
-                        <span class="blink-cursor txt-type" data-wait="3000"></span>
+                    <div class="font-semibold text-white px-6 border-l-[6px] border-red-600 select-none">
+                        <div class="inline lg:block text-5xl my-3">Let's Travel To</div>
+                        <span class="blink-cursor text-7xl txt-type" data-wait="3000"></span>
                         <span class="blue-color">.</span>
                     </div>
-                    <div class="info-text px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum saepe ipsum architecto beatae veniam culpa praesentium alias impedit maxime fuga numquam, quos sed voluptatem. Non mollitia debitis possimus totam unde impedit culpa, quis explicabo?</div>
+                    <div class="text-justify text-xl text-[#fff] mt-6 px-6 pr-20">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum saepe ipsum architecto beatae veniam culpa praesentium alias impedit maxime fuga numquam, quos sed voluptatem. Non mollitia debitis possimus totam unde impedit culpa, quis explicabo?
+                    </div>
+                    <!-- <div class="text-6xl text-white py-5 px-8 flex flex-col justify-end w-full">
+                        <div class="text-right">“A journey of a <br />thousand miles <br />begins with</div>
+                        <div class="text-[82px] uppercase text-right">a single step”</div>
+                    </div> -->
                 </div>
 
                 <div class="flex w-full lg:w-1/2 justify-center items-center py-10 lg:py-0">
@@ -84,12 +99,12 @@
                             </span>
                         </div>
                         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex" id="carousal-control-panel">
-                            <div class="carousel-control-button outline" data-imagecode="0"></div>
-                            <div class="carousel-control-button" data-imagecode="1"></div>
-                            <div class="carousel-control-button" data-imagecode="2"></div>
-                            <div class="carousel-control-button" data-imagecode="3"></div>
-                            <div class="carousel-control-button" data-imagecode="4"></div>
-                            <div class="carousel-control-button" data-imagecode="5"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all outline" data-imagecode="0"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all" data-imagecode="1"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all" data-imagecode="2"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all" data-imagecode="3"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all" data-imagecode="4"></div>
+                            <div class="carousel-control-button cursor-pointer hover:scale-150 transition-all" data-imagecode="5"></div>
                         </div>
                     </div>
                 </div>
@@ -102,9 +117,14 @@
 
         <!-- 🔥🔥 Here Starts The Image Panel 1 🔥🔥 -->
 
-        <div class="text-white w-full text-[50px] font-extrabold font-vietnam py-6 drop-shadow-2xl tracking-wide text-center greenBackground select-none">Explore The World</div>
+        <div
+            class="text-white w-full text-[50px] font-extrabold font-vietnam py-6 drop-shadow-2xl tracking-wide text-center textBackground select-none"
+            style="background-image: url('https://images.unsplash.com/photo-1542351366-d8d0560af4d1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1329')"
+        >
+            Explore The World With Us
+        </div>
         <div id="image-hover-page1" class="bg-[#151515]">
-            <div id="panel-container">
+            <div id="panel-container" class="flex w-[90vw]">
                 <div class="panel">
                     <h3 class="panel-title font-vietnam font-bold whitespace-nowrap">
                         Paris
@@ -146,7 +166,12 @@
         <!-- 🔥🔥 Here Starts Alternative Panel 🔥🔥 -->
 
         <div class="alternative-container">
-            <div class="text-white w-full text-[70px] font-extrabold font-vietnam py-6 drop-shadow-2xl tracking-wide text-center greenBackground select-none">Our&nbsp; Blogs</div>
+            <div
+                class="text-white w-full text-[50px] font-extrabold font-vietnam py-6 drop-shadow-2xl tracking-wide text-center textBackground select-none"
+                style="background-image: url('https://images.unsplash.com/photo-1542351366-d8d0560af4d1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1329')"
+            >
+                Read And Know More Facts
+            </div>
             <div class="alternative-container-row">
                 <div
                     class="acr-left background-image-fitting"
@@ -154,13 +179,18 @@
                 ></div>
                 <div class="acr-right">
                     <section class="alternative-container-text text-color-white" style="background-color: #000">
-                        <h2 class="uppercase font-mono my-[10px] text-[40px]">Fatehpur Sikri</h2>
+                        <h2 class="uppercase font-mono font-bold my-[10px] text-[40px]">Fatehpur Sikri &#8226;</h2>
                         <div class="text">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id accusamus tempore odio vel quas debitis minus ipsum? A quasi quo voluptatibus quod aut cum quidem, architecto neque beatae rem?</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nam doloremque velit dolorem ut, laudantium iusto, dicta placeat optio dolores ratione recusandae voluptatibus odio. Nostrum cupiditate velit voluptatibus voluptatem reprehenderit?</p>
                         </div>
-                        <div class="buttons">
-                            <a href="#" class="btn text-black bg-[#FFC107]">Click Me</a>
+                        <div class="w-full flex justify-end my-4">
+                            <button
+                                type="button"
+                                class="inline-block px-6 py-4 bg-yellow-500 text-black font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
+                            >
+                                Read More...
+                            </button>
                         </div>
                     </section>
                 </div>
@@ -168,13 +198,18 @@
             <div class="alternative-container-row">
                 <div class="acr-left">
                     <section class="alternative-container-text">
-                        <h2 class="uppercase font-mono my-[10px] text-[40px]">Taj Mahal</h2>
+                        <h2 class="uppercase font-mono font-bold my-[10px] text-[40px]">Taj Mahal &#8226;</h2>
                         <div class="text">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id accusamus tempore odio vel quas debitis minus ipsum? A quasi quo voluptatibus quod aut cum quidem, architecto neque beatae rem?</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nam doloremque velit dolorem ut, laudantium iusto, dicta placeat optio dolores ratione recusandae voluptatibus odio. Nostrum cupiditate velit voluptatibus voluptatem reprehenderit?</p>
                         </div>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-color-black">Click Me</a>
+                        <div class="w-full flex justify-end my-4">
+                            <button
+                                type="button"
+                                class="inline-block px-6 py-4 bg-gray-800 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out"
+                            >
+                                Read More...
+                            </button>
                         </div>
                     </section>
                 </div>
@@ -190,13 +225,18 @@
                 ></div>
                 <div class="acr-right">
                     <section class="alternative-container-text text-color-white" style="background-color: #000">
-                        <h2 class="uppercase font-mono my-[10px] text-[40px]">Solang valley</h2>
+                        <h2 class="uppercase font-mono font-bold my-[10px] text-[40px]">Solang valley &#8226;</h2>
                         <div class="text">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id accusamus tempore odio vel quas debitis minus ipsum? A quasi quo voluptatibus quod aut cum quidem, architecto neque beatae rem?</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nam doloremque velit dolorem ut, laudantium iusto, dicta placeat optio dolores ratione recusandae voluptatibus odio. Nostrum cupiditate velit voluptatibus voluptatem reprehenderit?</p>
                         </div>
-                        <div class="buttons">
-                            <a href="#" class="btn text-black bg-[#FFC107]">Click Me</a>
+                        <div class="w-full flex justify-end my-4">
+                            <button
+                                type="button"
+                                class="inline-block px-6 py-4 bg-yellow-500 text-black font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-yellow-600 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
+                            >
+                                Read More...
+                            </button>
                         </div>
                     </section>
                 </div>
@@ -204,13 +244,18 @@
             <div class="alternative-container-row">
                 <div class="acr-left">
                     <section class="alternative-container-text">
-                        <h2 class="uppercase font-mono my-[10px] text-[40px]">Mohiniyattam</h2>
+                        <h2 class="uppercase font-mono font-bold my-[10px] text-[40px]">Mohiniyattam &#8226;</h2>
                         <div class="text">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id accusamus tempore odio vel quas debitis minus ipsum? A quasi quo voluptatibus quod aut cum quidem, architecto neque beatae rem?</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nam doloremque velit dolorem ut, laudantium iusto, dicta placeat optio dolores ratione recusandae voluptatibus odio. Nostrum cupiditate velit voluptatibus voluptatem reprehenderit?</p>
                         </div>
-                        <div class="buttons">
-                            <a href="#" class="btn btn-color-black">Click Me</a>
+                        <div class="w-full flex justify-end my-4">
+                            <button
+                                type="button"
+                                class="inline-block px-6 py-4 bg-gray-800 text-white font-semibold text-sm leading-tight uppercase rounded shadow-md hover:bg-gray-900 hover:shadow-lg focus:bg-gray-900 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition duration-150 ease-in-out"
+                            >
+                                Read More...
+                            </button>
                         </div>
                     </section>
                 </div>
@@ -227,74 +272,56 @@
 
         <!-- 🔥🔥 Here Starts The Footer 🔥🔥 -->
 
-        <footer>
-            <div class="grid grid-flow-row md:flex md:flex-row">
-                <div class="col">
-                    <img src="./Signature.png" class="logo" />
+        <footer class="">
+            <div class="grid grid-flow-row md:flex md:flex-row pb-10">
+                <div class="col md:w-2/5 px-6">
+                    <img src="./images/Signature.png" class="logo" />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quae impedit. Officia sit minima veritatis assumenda, et labore unde quibusdam ad id non esse obcaecati, eum aperiam nostrum deleniti magni!</p>
                 </div>
-
-                <div class="col">
-                    <h3>OFFICE</h3>
-                    <p>Henley Street,</p>
-                    <p>Stratford-upon-Avon CV37 6QW,</p>
-                    <p>United Kingdom</p>
-                    <p class="email-id">email@gmail.com</p>
-                    <h4>+1 202-918-2132</h4>
-                    <h4>+91 98655 39783</h4>
-                </div>
-                <div class="col">
-                    <h3>SUPPORT US</h3>
-                    <ul class="links">
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">Services</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3>CONTACT US</h3>
-                    <form>
-                        <svg class="h-9 w-9 mr-3" viewBox="0 0 24 24">
-                            <path fill="#fff" d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" />
-                        </svg>
-                        <input type="email" placeholder="Enter Your Email ID" required />
-                        <button type="submit">
-                            <svg class="w-9 h-9 hover:scale-125" viewBox="0 0 24 24">
-                                <path
-                                    fill-rule="nonzero"
-                                    fill="#fff"
-                                    d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z"
-                                />
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="social-icons w-full flex flex-row justify-between px-6">
-                        <svg class="w-9 h-9 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
-                            <path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
-                        </svg>
-                        <svg class="w-9 h-9 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
-                            <path
-                                fill="#fff"
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"
-                            />
-                        </svg>
-                        <svg class="w-9 h-9 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
-                            <path
-                                fill="#fff"
-                                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"
-                            />
-                        </svg>
-                        <svg class="w-9 h-9 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
-                            <path
-                                fill="#fff"
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"
-                            />
-                        </svg>
+                <div class="flex flex-row w-3/5">
+                    <div class="col md:w-1/2">
+                        <h3 class="text-2xl my-4 font-semibold">OFFICE</h3>
+                        <p>Henley Street,</p>
+                        <p>Stratford-upon-Avon CV37 6QW,</p>
+                        <p>United Kingdom</p>
+                        <p class="email-id">email@gmail.com</p>
+                        <h4>+1 202-918-2132</h4>
+                        <h4>+91 98655 39783</h4>
+                    </div>
+                    <div class="col md:w-1/2">
+                        <h3 class="text-2xl my-4 font-semibold">SUPPORT US</h3>
+                        <ul class="links">
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="">Services</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="copyright hidden md:block">Created By <a href="https://github.com/AdityaMayukhSom" class="underline"> Aditya Mayukh Som</a> &#169; Copyright 2022. All Rights Reserved.</div>
+            <div class="copyright hidden md:flex items-center justify-between px-5">
+                <p>Created By <a href="https://github.com/AdityaMayukhSom" class="underline"> Aditya Mayukh Som</a> &#169; Copyright 2022. All Rights Reserved.</p>
+                <div class="social-icons flex flex-row justify-between w-[120px]">
+                    <svg class="w-8 h-8 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
+                        <path
+                            fill="#fff"
+                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"
+                        />
+                    </svg>
+                    <svg class="w-8 h-8 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
+                        <path
+                            fill="#fff"
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"
+                        />
+                    </svg>
+                    <svg class="w-8 h-8 cursor-pointer hover:scale-125 transition-all" viewBox="0 0 24 24">
+                        <path
+                            fill="#fff"
+                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.441 16.892c-2.102.144-6.784.144-8.883 0-2.276-.156-2.541-1.27-2.558-4.892.017-3.629.285-4.736 2.558-4.892 2.099-.144 6.782-.144 8.883 0 2.277.156 2.541 1.27 2.559 4.892-.018 3.629-.285 4.736-2.559 4.892zm-6.441-7.234l4.917 2.338-4.917 2.346v-4.684z"
+                        />
+                    </svg>
+                </div>
+            </div>
 
             <div class="copyright block md:hidden">
                 <div class="py-1">Created By <a href="https://github.com/AdityaMayukhSom" class="underline"> Aditya Mayukh Som</a></div>
@@ -305,6 +332,6 @@
 
         <!-- 🔥🔥 Footer Ends Here 🔥🔥 -->
 
-        <script src="./script.js"></script>
+        <script src="./scripts/script.js"></script>
     </body>
 </html>
