@@ -39,42 +39,43 @@ function init() {
 
 //Constructor Function
 
-const TypeWriter = function (txtElement, words, wait = 3000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = "";
-    this.wordIndex = 0;
-    this.wait = parseInt(wait);
-    this.type();
-    this.isDeleting = false;
-};
-
-TypeWriter.prototype.type = function () {
-    const current = this.wordIndex % this.words.length; //Current Index Of Words
-    const fullTxt = this.words[current]; //Get full text of current word
-    let typeSpeed = 500; //Type Speed Is Changing Thus It Is let
-
-    /*Check If Deletion Is Ongoing*/
-    if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1); //If Deleting, Then Remove Another Character
-        typeSpeed /= 2; //Increases The Delete Speed Thus Reducing Time For Each Delete
-    } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1); //Add A Character
-    }
-    this.txtElement.innerHTML = `${this.txt}`; //Insert Text Into Element
-
-    //If Word Is Complete
-    if (!this.isDeleting && this.txt === fullTxt) {
-        typeSpeed = this.wait;
-        this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === "") {
+class TypeWriter {
+    constructor(txtElement, words, wait = 3000) {
+        this.txtElement = txtElement;
+        this.words = words;
+        this.txt = "";
+        this.wordIndex = 0;
+        this.wait = parseInt(wait);
+        this.type();
         this.isDeleting = false;
-        this.wordIndex++;
-        typeSpeed = 500;
     }
+    type() {
+        const current = this.wordIndex % this.words.length; //Current Index Of Words
+        const fullTxt = this.words[current]; //Get full text of current word
+        let typeSpeed = 500; //Type Speed Is Changing Thus It Is let
 
-    setTimeout(() => this.type(), typeSpeed);
-};
+        /*Check If Deletion Is Ongoing*/
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1); //If Deleting, Then Remove Another Character
+            typeSpeed /= 2; //Increases The Delete Speed Thus Reducing Time For Each Delete
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1); //Add A Character
+        }
+        this.txtElement.innerHTML = `${this.txt}`; //Insert Text Into Element
+
+        //If Word Is Complete
+        if (!this.isDeleting && this.txt === fullTxt) {
+            typeSpeed = this.wait;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.wordIndex++;
+            typeSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typeSpeed);
+    }
+}
 
 /*🔥🔥 TypeWriter Effect Ends Here 🔥🔥*/
 
